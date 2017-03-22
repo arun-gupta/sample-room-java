@@ -1,7 +1,3 @@
-FROM websphere-liberty:webProfile7
+FROM jboss/wildfly:10.1.0.Final
 
-MAINTAINER Erin Schnabel @ebullientworks
-
-ADD ./target/wlp/usr/servers/gojava-room /opt/ibm/wlp/usr/servers/defaultServer/
-
-CMD ["/opt/ibm/wlp/bin/server", "run"]
+ADD target/gojava-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
